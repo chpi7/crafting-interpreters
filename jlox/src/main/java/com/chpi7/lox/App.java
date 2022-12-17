@@ -1,4 +1,4 @@
-package com.chpi7;
+package com.chpi7.lox;
 
 /**
  * Hello world!
