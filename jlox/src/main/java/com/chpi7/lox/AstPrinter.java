@@ -18,20 +18,18 @@ public class AstPrinter implements Expr.Visitor<String> {
 
     @Override
     public String visitGroupingExpr(Grouping expr) {
-        // TODO Auto-generated method stub
-        return null;
+        return parenthesize("group", expr.expression);
     }
 
     @Override
     public String visitLiteralExpr(Literal expr) {
-        // TODO Auto-generated method stub
-        return null;
+        if (expr.value == null) return "nil";
+        return expr.value.toString();
     }
 
     @Override
     public String visitUnaryExpr(Unary expr) {
-        // TODO Auto-generated method stub
-        return null;
+        return parenthesize(expr.operator.lexeme, expr.right);
     }
 
     private String parenthesize(String name, Expr... exprs) {
