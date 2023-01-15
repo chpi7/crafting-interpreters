@@ -4,6 +4,7 @@ import com.chpi7.lox.Expr.Assign;
 import com.chpi7.lox.Expr.Binary;
 import com.chpi7.lox.Expr.Grouping;
 import com.chpi7.lox.Expr.Literal;
+import com.chpi7.lox.Expr.Logical;
 import com.chpi7.lox.Expr.Unary;
 import com.chpi7.lox.Expr.Variable;
 
@@ -42,6 +43,11 @@ public class AstPrinter implements Expr.Visitor<String> {
     @Override
     public String visitAssignExpr(Assign expr) {
         return parenthesize("assign " + expr.name, expr.value);
+    }
+
+    @Override
+    public String visitLogicalExpr(Logical expr) {
+        return parenthesize(expr.operator.lexeme, expr.left, expr.right);
     }
 
     private String parenthesize(String name, Expr... exprs) {
