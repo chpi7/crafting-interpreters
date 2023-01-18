@@ -2,6 +2,7 @@ package com.chpi7.lox;
 
 import com.chpi7.lox.Expr.Assign;
 import com.chpi7.lox.Expr.Binary;
+import com.chpi7.lox.Expr.Call;
 import com.chpi7.lox.Expr.Grouping;
 import com.chpi7.lox.Expr.Literal;
 import com.chpi7.lox.Expr.Logical;
@@ -12,6 +13,11 @@ public class AstPrinter implements Expr.Visitor<String> {
 
     String print(Expr expr) {
         return expr.accept(this);
+    }
+
+    @Override
+    public String visitCallExpr(Call expr) {
+        return parenthesize("call (todo printing :))");
     }
 
     @Override
