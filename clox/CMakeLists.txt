@@ -4,4 +4,10 @@ project(clox)
 
 include_directories(include)
 
-add_executable(clox src/main.c)
+add_executable(clox 
+    src/main.c 
+    src/chunk.c 
+    src/debug.c 
+    src/memory.c
+    src/value.c
+)
