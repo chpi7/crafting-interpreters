@@ -24,14 +24,15 @@ public class Lox {
 
         System.out.println(new AstPrinter().print(expr));
 
-        if (args.length > 1) {
-            System.out.println("Usage: jlox [script]");
-            System.exit(1);
-        } else if (args.length == 1) {
-            runFile(args[0]);
-        } else {
-            runPrompt();
-        }
+        runFile("test.lox");
+        // if (args.length > 1) {
+        //     System.out.println("Usage: jlox [script]");
+        //     System.exit(1);
+        // } else if (args.length == 1) {
+        //     runFile(args[0]);
+        // } else {
+        //     runPrompt();
+        // }
     }
 
     private static void runFile(String path) throws IOException {
