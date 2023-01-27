@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "memory.h": "c"
+        "memory.h": "c",
+        "exception": "c",
+        "type_traits": "c",
+        "typeinfo": "c"
     }
 }
