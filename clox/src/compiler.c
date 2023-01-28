@@ -35,7 +35,7 @@ typedef void (*ParseFn)();
 typedef struct {
     ParseFn prefix;
     ParseFn infix;
-    ParseFn precedence;
+    Precedence precedence;
 } ParseRule;
 
 Parser parser;
