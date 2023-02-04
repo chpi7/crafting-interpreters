@@ -1,8 +1,12 @@
 #ifndef clox_object_h
-#define clox_objec_h
+#define clox_object_h
 
 #include "common.h"
 #include "value.h"
+
+typedef enum {
+    OBJ_STRING,
+} ObjType;
 
 #define OBJ_TYPE(value)     (AS_OBJ(value)->type)
 
@@ -10,10 +14,6 @@
 
 #define AS_STRING(value)    ((ObjString*)AS_OBJ(value))
 #define AS_CSTRING(value)   (((ObjString*)AS_OBJ(value))->chars)     
-
-typedef enum {
-    OBJ_STRING,
-} ObjType;
 
 struct Obj {
     ObjType type;
