@@ -165,6 +165,7 @@ InterpretResult interpret(const char* source) {
     vm.ip = vm.chunk->code;
 
     InterpretResult result = run();
+    // TODO: free if runtime error?
 
     freeChunk(&chunk);
     return result;
